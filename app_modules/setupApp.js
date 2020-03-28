@@ -24,4 +24,5 @@ function setupAppSecrets() {
         dataUtil.setupAppData(githubUsername, githubPassword, projectDirectory);
     }
 }
+
 exports.setupApp = setupApp;

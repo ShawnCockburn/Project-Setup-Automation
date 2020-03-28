@@ -1,0 +1,36 @@
+{
+    "languageSetup": [
+        {
+          "name": "default",
+          "alias": [
+            ""
+          ],
+          "editor": "vscode",
+          "editorCommand": "code",
+          "gitignore": "default"
+        },
+        {
+          "name": "javascript",
+          "alias": [
+            "javascript",
+            "js"
+          ],
+          "editor": "vscode",
+          "editorCommand": "code",
+          "gitignore": "javascript"
+        },
+        {
+          "name": "nodejs",
+          "alias": [
+            "nodejs",
+            "node.js",
+            "node-js",
+            "node_js",
+            "node"
+          ],
+          "editor": "vscode",
+          "editorCommand": "code",
+          "gitignore": "nodejs"
+        }
+      ]
+}

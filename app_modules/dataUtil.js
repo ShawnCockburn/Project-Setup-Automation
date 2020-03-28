@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const workingDir = __dirname;
 const dataFile = workingDir + path.sep + "data.json";
+const defaultLanguageDataFile = appRoot + "/resources/defaults/defaultLanguageData.json";
 
 function appDataExists() {
     return fs.existsSync(dataFile);
@@ -11,10 +12,12 @@ function setupAppData(githubUsername, githubPassword, projectDirectory) {
     if(projectDirectory.substr(projectDirectory.length - 1) != path.sep){
         projectDirectory = projectDirectory + path.sep;
     }
+    let defaultLanguageData = JSON.parse(fs.readFileSync(defaultLanguageDataFile, 'utf8'));
     let data = JSON.stringify({
         username: githubUsername,
         password: githubPassword,
-        projectDir: projectDirectory
+        projectDir: projectDirectory,
+        defaultLanguageData: defaultLanguageData.languageSetup
     });
 
     fs.writeFile(dataFile, data,'utf8', function (err) {
