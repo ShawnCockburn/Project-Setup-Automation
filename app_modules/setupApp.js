@@ -17,11 +17,9 @@ function setupAppSecrets() {
         return true;
     } else {
         let githubUsername = readlineSync.question("What's your GitHub username? ");
-        let githubPassword = readlineSync.question("What's your GitHub password? ", {
-            hideEchoBack: true
-        });
+        let githubToken = readlineSync.question("Generate a GitHub personal access token with full repo access and paste it here: ");
         let projectDirectory = readlineSync.question("Where do you want your new projects to be created(example: C:\\Users\\User\\Projects\\)? ");
-        dataUtil.setupAppData(githubUsername, githubPassword, projectDirectory);
+        dataUtil.setupAppData(githubUsername, githubToken, projectDirectory);
     }
 }
 

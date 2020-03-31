@@ -5,8 +5,8 @@
           "alias": [
             ""
           ],
-          "editor": "vscode",
-          "editorCommand": "code",
+          "setupCommands": [],
+          "editorCommand": "code .",
           "gitignore": "default"
         },
         {
@@ -15,8 +15,11 @@
             "javascript",
             "js"
           ],
-          "editor": "vscode",
-          "editorCommand": "code",
+          "setupCommands": [
+            "touch app.js",
+            "npm init -y"
+          ],
+          "editorCommand": "code .",
           "gitignore": "javascript"
         },
         {
@@ -28,8 +31,11 @@
             "node_js",
             "node"
           ],
-          "editor": "vscode",
-          "editorCommand": "code",
+          "setupCommands": [
+            "touch app.js",
+            "npm init -y"
+          ],
+          "editorCommand": "code .",
           "gitignore": "nodejs"
         }
       ]
