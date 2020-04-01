@@ -28,6 +28,17 @@ function setupFiles(directory, language) {
             process.exit(1);
         }
     });
+    
+    let data = `# This is a ${language.name} project.`;
+    if (language.name == "default"){
+        data = "# My Project"
+    }
+    fs.writeFile(directory + path.sep + 'README.md', data, function (err,data) {
+        if (err) {
+          return console.log(err);
+        }
+        console.log(data);
+      });
     shell.cd(directory);
     if (shell.exec("touch README.md").code !== 0) {
         shell.echo('Error: Git readme.md add failed');

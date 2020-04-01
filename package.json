@@ -1,21 +1,22 @@
 {
   "name": "ProjectSetupAutomation",
   "version": "1.0.0",
-  "description": "",
-  "main": "setup.js",
+  "description": "A CLI tool to automate setting up development projects",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Shawn Cockburn",
   "license": "ISC",
   "dependencies": {
     "@octokit/rest": "^17.1.4",
-    "app-root-path": "^3.0.0",
     "lodash": "^4.17.15",
     "normalize-text": "^2.0.1",
     "readline-sync": "^1.4.10",
     "shelljs": "^0.8.3",
     "yargs": "^15.3.1"
+  },
+  "bin": {
+    "createproject": "createproject.js"
   }
 }
