@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
-const dataFile = appRoot + "/data.json";
-const defaultLanguageDataFile = appRoot + "/resources/defaults/defaultLanguageData.json";
+const dataFile = appRoot + path.sep + "data.json";
+const defaultLanguageDataFile = appRoot + path.sep + "resources/defaults/defaultLanguageData.json";
 
 function appDataExists() {
     return fs.existsSync(dataFile);
@@ -16,7 +16,7 @@ function setupAppData(githubUsername, githubToken, projectDirectory) {
         username: githubUsername,
         token: githubToken,
         projectDir: projectDirectory,
-        defaultLanguageData: defaultLanguageData.languageSetup
+        defaultLanguageData: defaultLanguageData.defaultLanguageData
     });
 
     fs.writeFileSync(dataFile, data,'utf8', function (err) {

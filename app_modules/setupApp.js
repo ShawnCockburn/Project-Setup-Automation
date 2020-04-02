@@ -3,13 +3,12 @@ const shell = require('shelljs');
 const dataUtil = require('./dataUtil.js');
 
 
-function setupApp(){
+function setupApp() {
     if (!shell.which('git')) {
         shell.echo('Sorry, this tool requires git');
         shell.exit(1);
-      } else {
-          return setupAppSecrets();
-      }
+    }
+    setupAppSecrets();
 }
 
 function setupAppSecrets() {

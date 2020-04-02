@@ -3,10 +3,13 @@
 //global
 global.appRoot = __dirname;
 
+//App setup
+const setupApp = require("./app_modules/setupApp.js");
+setupApp.setupApp();
+
 //imports
 const argv = require('yargs').argv
 const createDir = require("./app_modules/createDirectory.js");
-const setupApp = require("./app_modules/setupApp.js");
 const gitUtil = require("./app_modules/gitUtil.js");
 const dataUtil = require("./app_modules/dataUtil.js");
 const openCodeEditor = require("./app_modules/openCodeEditor.js");
@@ -41,8 +44,7 @@ const projectGithubPrivat = projectGithubPrivateArgv;
 const projectCodeEditor = projectCodeEditorArgv;
 const projectHelp = argv.h;
 
-//App setup
-setupApp.setupApp();
+//help check
 if (newProjectName == "help" || projectHelp) {
     diplayHelp();
     process.exit(0);
@@ -75,7 +77,7 @@ function app() {
 
 function matchLanguage() {
     let foundProjectLanguage = "";
-    let data = dataUtil.getAppData().languageSetup;
+    let data = dataUtil.getAppData().defaultLanguageData;
     if (projectLanguage == undefined || projectLanguage == null) {
         return data[0];
     }
