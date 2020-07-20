@@ -10,7 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "@octokit/rest": "^17.1.4",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "normalize-text": "^2.0.1",
     "readline-sync": "^1.4.10",
     "shelljs": "^0.8.3",
